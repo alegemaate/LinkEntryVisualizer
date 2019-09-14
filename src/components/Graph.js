@@ -10,6 +10,7 @@ export default function Graph({ graph }) {
       <Sigma
         renderer="webgl"
         graph={graph}
+        style={{ height: "100%" }}
         settings={{ drawEdges: true, clone: false }}
       >
         <RelativeSize initialSize={15} />

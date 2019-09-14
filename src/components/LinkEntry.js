@@ -17,7 +17,7 @@ export default function LinkEntry({
   internal = [],
   external = [],
   depth = 0,
-  status = 0
+  status = 0,
 }) {
   const [open, setOpen] = useState(false);
 
@@ -72,7 +72,7 @@ export default function LinkEntry({
             text="External Links"
           >
             <ul className="link-list">
-              {internal.map((link, index) => (
+              {external.map((link, index) => (
                 <li key={`${url}${index}`}>
                   <a href={url} target="_blank" rel="noopener noreferrer">
                     {link}

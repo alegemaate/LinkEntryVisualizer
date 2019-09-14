@@ -6,4 +6,6 @@
   background-color: #fff;
   margin-bottom: 10px;
   position: relative;
+  height: 400px;
+  resize: vertical;
 }
