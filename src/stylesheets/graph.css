@@ -1,0 +1,9 @@
+.graph-view {
+  border: 1px solid #777;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+}

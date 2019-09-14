@@ -6,13 +6,20 @@ body {
 }
 
 textarea {
+  border: 1px solid #777;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
   resize: vertical;
+}
+
+textarea:hover {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.1s;
 }
 
 input[type="submit"] {
@@ -51,6 +58,10 @@ h2 {
   font-size: 28px;
   text-transform: uppercase;
   font-family: "HelveticaBold", sans-serif;
+}
+
+.error {
+  color: #800;
 }
 
 .page-title {
