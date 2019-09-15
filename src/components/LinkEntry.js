@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../stylesheets/link-entry.css";
 
-import { fileO } from "react-icons-kit/fa/fileO";
+import { fileTextO } from "react-icons-kit/fa/fileTextO";
+import { fileCodeO } from "react-icons-kit/fa/fileCodeO";
+
 import { timesCircle } from "react-icons-kit/fa/timesCircle";
 import { checkCircle } from "react-icons-kit/fa/checkCircle";
 import { arrowDown } from "react-icons-kit/fa/arrowDown";
@@ -18,6 +20,7 @@ export default function LinkEntry({
   external = [],
   depth = 0,
   status = 0,
+  content_type = "",
 }) {
   const [open, setOpen] = useState(false);
 
@@ -27,28 +30,33 @@ export default function LinkEntry({
 
       {!open && (
         <React.Fragment>
-          <LinkSection icon={fileO} text={"URL - " + url} />
+          <LinkSection icon={fileTextO} text={"URL - " + url} />
         </React.Fragment>
       )}
 
       {open && (
         <React.Fragment>
           {/* URL */}
-          <LinkSection icon={fileO} text="URL">
+          <LinkSection icon={fileTextO} text="URL">
             {url}
           </LinkSection>
 
           {/* Status */}
           <LinkSection
             icon={status === 200 ? checkCircle : timesCircle}
-            iconColor={status === 200 ? "#080" : "#800"}
+            iconColor={status === 200 ? "#0A0" : "#A00"}
             text="Status"
           >
             <StatusCode code={status} />
           </LinkSection>
 
+          {/* Content type */}
+          <LinkSection icon={fileCodeO} iconColor="#DA0" text="Content Type">
+            {content_type}
+          </LinkSection>
+
           {/* Depth */}
-          <LinkSection icon={arrowDown} iconColor="#007" text="Depth">
+          <LinkSection icon={arrowDown} iconColor="#009" text="Depth">
             {depth}
           </LinkSection>
 

@@ -1,6 +1,5 @@
 import React from "react";
-import { Sigma, RelativeSize, EdgeShapes } from "react-sigma";
-import ForceLink from "react-sigma/lib/ForceLink";
+import { Sigma, ForceAtlas2, RelativeSize, NodeShapes } from "react-sigma";
 
 import "../stylesheets/graph.css";
 
@@ -8,19 +7,18 @@ export default function Graph({ graph }) {
   return (
     <div className="graph-view">
       <Sigma
-        renderer="webgl"
+        renderer="canvas"
         graph={graph}
         style={{ height: "100%" }}
-        settings={{ drawEdges: true, clone: false }}
+        settings={{
+          clone: false,
+          minArrowSize: 5,
+          batchEdgesDrawing: true,
+        }}
       >
-        <RelativeSize initialSize={15} />
-        <ForceLink
-          adjustSizes
-          background
-          easing="cubicInOut"
-          randomize="globally"
-        />
-        <EdgeShapes default="arrow" />
+        <RelativeSize initialSize={1} />
+        <ForceAtlas2 worker />
+        <NodeShapes default="image" />
       </Sigma>
     </div>
   );
