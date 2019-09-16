@@ -15,7 +15,7 @@ export function buildGraph(input) {
     size: 1,
     x: Math.random(),
     y: Math.random(),
-    type: content_type === "text/html" ? "circle" : "star",
+    type: content_type.includes("text/html") ? "circle" : "star",
   }));
 
   let edges = [];
